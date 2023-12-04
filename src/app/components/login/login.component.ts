@@ -15,6 +15,6 @@ export class LoginComponent {
 
 
   loginuser() {
-    this.router.navigate(['/listProduit'])
+   this.router.navigate(['listProduit'])
   }
 }

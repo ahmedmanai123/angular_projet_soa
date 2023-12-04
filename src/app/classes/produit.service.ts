@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-import { Produit} from "./produit";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProduitService {
 
-  private apiURL = 'https://backend-ecommerce-jwt-2024.vercel.app/api'
+  private apiURL = 'https://localhost:8089/Produits'
 
   httpOptions = {
 
@@ -24,7 +22,7 @@ export class ProduitService {
   }
   constructor(private httpClient: HttpClient) { }
   getAll(): Observable<any> {
-    return this.httpClient.get(this.apiURL + '/articles/')
+    return this.httpClient.get(this.apiURL + '/allProduits/')
 
 
 
@@ -36,11 +34,11 @@ export class ProduitService {
 
   }
 
-  find(_id:object): Observable<any> {
+  find(id:object): Observable<any> {
 
 
 
-    return this.httpClient.get(this.apiURL + '/articles/' + _id)
+    return this.httpClient.get(this.apiURL + '/' + id)
 
 
 
