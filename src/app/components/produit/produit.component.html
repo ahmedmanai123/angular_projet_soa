@@ -1,0 +1,54 @@
+<div class="container">
+
+  <h2>Les produits</h2>
+
+  <a href="#" routerLink="/products/create/" class="btn btn-success">
+    <i class="bi bi-plus-circle-fill"></i>
+    Nouveau Produit
+  </a>
+
+
+
+  <table class="table table-striped">
+
+    <thead>
+
+    <tr>
+
+
+      <th>name</th>
+
+      <th>prix</th>
+
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr *ngFor="let product of products">
+
+
+      <td>{{ product.name }}</td>
+
+      <td>{{ product.prix }}</td>
+
+
+      <td>
+
+
+        <a href="#" [routerLink]="['/products/', product.id, 'edit']" class="btn btn-default">
+          <i class="bi bi-pencil-square" style="color:blue"></i>
+        </a>
+
+
+      </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
